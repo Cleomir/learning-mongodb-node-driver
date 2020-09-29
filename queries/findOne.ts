@@ -8,10 +8,10 @@ const client = new MongoClient(uri, { useUnifiedTopology: true });
   try {
     await client.connect();
 
-    const database: Db = client.db("sample_mflix");
-    const collection: Collection<any> = database.collection("movies");
+    const database: Db = client.db("db_name");
+    const collection: Collection<any> = database.collection("collections_name");
     const movie: any = await collection.findOne({
-      title: "Back to the future",
+      title: "Some name",
     });
 
     console.log(movie);

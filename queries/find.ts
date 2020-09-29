@@ -11,7 +11,7 @@ const client = new MongoClient(uri, { useUnifiedTopology: true });
     const database: Db = client.db("db_name");
     const collection: Collection<any> = database.collection("collections_name");
     const result: Cursor<any> = collection.find({
-      name: "Lemony Snicket",
+      name: "some name",
       date: {
         $gte: new Date(new Date().setHours(0, 0, 0)),
         $lt: new Date(new Date().setHours(23, 59, 59)),
