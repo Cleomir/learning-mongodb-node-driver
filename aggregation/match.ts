@@ -13,10 +13,7 @@ const client = new MongoClient(uri, { useUnifiedTopology: true });
     const aggregationResult: AggregationCursor = collection.aggregate([
       {
         $match: {
-          date: {
-            $gte: new Date(new Date().getTime() - 1000 * 3600 * 24 * 7),
-            $lt: new Date(),
-          },
+          property: "condition"
         },
       },
     ]);
