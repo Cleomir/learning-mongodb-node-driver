@@ -13,9 +13,9 @@ const client = new MongoClient(uri, { useUnifiedTopology: true });
     const aggregationResult: AggregationCursor = collection.aggregate([
       {
         $group: {
-          _id: {property: "condition"},
+          _id: { property: "condition" },
           property: "condition",
-          anotherProperty: "condition"
+          anotherProperty: "condition",
         },
       },
     ]);
