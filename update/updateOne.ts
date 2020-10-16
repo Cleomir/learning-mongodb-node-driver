@@ -10,14 +10,12 @@ const client = new MongoClient(uri, { useUnifiedTopology: true });
 
     const database: Db = client.db("db_name");
     const collection: Collection<any> = database.collection("collections_name");
-    const document = [
-      {
-        $set: {
-          title: "test title",
-          date: new Date(),
-        },
+    const document = {
+      $set: {
+        title: "test title",
+        date: new Date(),
       },
-    ];
+    };
     const result: UpdateWriteOpResult = await collection.updateOne(
       { property: "value" },
       document
